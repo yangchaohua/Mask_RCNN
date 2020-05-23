@@ -37,7 +37,7 @@ class_names = ["bg",
                "bareland",
                "wasteland"]
 class_count = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-dest_root_path = "E:\\GG\\GVG\\temp"
+dest_root_path = "/media/ych/Ubuntu/GG/dataset/crop_detection/GVG/single_kind"
 class DrugDataset(utils.Dataset):
     # 得到该图中有多少个实例（物体）
     def get_obj_index(self, image):
@@ -218,12 +218,9 @@ def is_one(twoD_array):
         return 0
 
 def run():
-    ori_root_path = "E:\\GG\\GVG\\tensorflow\\dataset\\dataset_train"
+    ori_root_path = "/media/ych/Ubuntu/GG/dataset/crop_detection/GVG/label/dataset4single_class_train"
     ori_list = os.listdir(ori_root_path)
-    nowlist = ori_list[700:len(ori_list)-1]
-    #shuffle(ori_list)
     ori_count = len(ori_list)
-    # train与val数据集准备
     dataset_ori = DrugDataset()
     dataset_ori.load_shapes(ori_count,  ori_list, ori_root_path)
     dataset_ori.prepare()
