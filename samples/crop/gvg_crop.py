@@ -225,7 +225,6 @@ def run():
     dataset_ori.load_shapes(ori_count,  ori_list, ori_root_path)
     dataset_ori.prepare()
 
-    # Load and display random samples
     for image_id in dataset_ori.image_ids:
         image = dataset_ori.load_image(image_id)
         mask, class_ids = dataset_ori.load_mask(image_id)
